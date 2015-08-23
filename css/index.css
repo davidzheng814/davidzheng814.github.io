@@ -1,380 +1,62 @@
-
 html, body {
-	height: 100%;
-	min-height: 100%;
-	border:0px;
-	margin:0px;
-}
-a{
-  color:#000;
-  text-decoration:none;
-}
-/* LOADING PAGE */ 
-#loading {
-  width: 100%;
-  height: 100%;
-  top: 0px;
-  left: 0px;
-  position: fixed;
-  display: block;
-  opacity: 1.0;
-  z-index: 99;
-  text-align: center;
-  background: url(../resources/bgimg.jpg) 50% 0 repeat fixed; 
-}
-progress[value] {
-  position: relative;
-  -webkit-appearance: none;
-  appearance: none;
-  top:-13px;
-  margin-top: -10px;
-  width: 100%;
-  height: 5px;
-}
-progress[value]::-webkit-progress-bar {
-  padding: 0px;
-  margin: 0px;
-  background-color: #fff;
-  border-radius: 0px;
-  box-shadow: 0 0px 0px rgba(0, 0, 0, 0) none;
-}
-progress[value]::-webkit-progress-value {
-  background-color: black;
-  border-radius: 0px; 
+    margin: 0;
+    height: 100%;
+    background-color: #FFF;
 }
 
-#loading-wrapper {
-  position: absolute;
-  top:50%;
-  left: 0;
-  height: 100px;
-  width: 100%;
-
-}
-#loading-image {
-  position: relative;
-  top: 0;
-  left: 375px;
-  z-index: 100;
-  opacity: 1.0;
-  width: 100px; 
-  height: auto;
-}
-#loading-text { 
-  font-family: 'ProximaNova-Bold', sans-serif;
-  font-weight: bold;
-  height: 100px; 
-  position: relative; 
-  text-align: center; 
-  top: 0%; 
-  width: 100%;
-  color:white; 
-
-  font-size: 110px;
-  margin-top: -71px;
+section {
+    color:#FFFFFF;
+    height:100%;
+    width:100%;
+    position:absolute;
+    text-align:center;
+    font-family: 'Gibson', 'Helvetica Neue', 'HelveticaNeue', Helvetica, Arial, sans-serif;
 }
 
-/* BODY */
-#p1 { 
-    position: relative; 
-	background-color: white;
-  background: url(../resources/bgimg.jpg) 50% 0 repeat fixed; 
-  background-size:cover;
-  background-repeat: repeat;
-  min-height: 400px; 
-  height: 100%; 
-  margin: 0 auto; 
-  width: 100%; 
-  max-width: 1920px; 
+#landing {
+    background-color: #56BC8A;
+    z-index: 5;
 }
-#article-name { 
 
-	font-family: 'Volta W01 Medium';
-  font-weight: bold;
-  height: 100px; 
-  position: absolute; 
-  text-align: center; 
-  top: 30%; 
-  width: 100%;
-  color:white; 
-  font-size: 35px;
+#MIT-logo {
+    position:absolute;
+    top: 39%;
+    left: 53%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
 }
-.line {
-  display: block;
-  border-top: 2px #FFF solid;
-  margin: 30px auto;
-  overflow: hidden;
-  width: 40%;
-  height: 4px;
-}
-#article-name-author {
 
-  font-size: 20px;
-}
-#p2 { 
-	color:black;
-	background-color: white;
-  /*min-height: 2500px; */
-  height: 100%; 
-  margin: 0 auto; 
-  width: 100%; 
-  max-width: 1920px; 
-  position: relative; 
-  /*-webkit-box-shadow: 0 0 50px rgba(0,0,0,0.8);*/
-  /*box-shadow: 0 0 50px rgba(0,0,0,0.8);*/
-}
-#p2_head1 {
-	position: relative; 
-	color:black;
-	text-align: center;
-	top:60px;
-  font-size: 15px;
-} 
-
-#p2_head2 {
-  position: relative; 
-  font-family: Didot, â€œDidot LT STDâ€, â€œHoefler Textâ€, Garamond, â€œTimes New Romanâ€, serif;
-  color:black;
-  text-align: center;
-  top:115px;
-  font-size: 20px;
-  opacity: 0;
-} 
-#p2_head3 {
-  position: relative; 
-  font-family: Didot, â€œDidot LT STDâ€, â€œHoefler Textâ€, Garamond, â€œTimes New Romanâ€, serif;
-  color:black;
-  text-align: center;
-  top:135px;
-  font-size: 20px;
-  opacity: 0;
-} 
-
-.box {
-  height: 20%;
-  width: 10%;
-  background-color: #000;
-  position: relative;
-}
-#b1 { 
-  top:20%;
-  left:20%;
-}
-#b2 {
-  top:40%;
-  left: 40%;
-}
-#b3 {
-  top:60%;
-  left:60%;
-}
-#banner1{
-  background: url(../resources/bokeh3.gif) 50% 0 repeat fixed; 
-  background-size:cover;
-  background-repeat: repeat;
-  width:100%;
-  opacity:1;
-}
-#banner2{
-  background: url(../resources/bokeh3.gif) 50% 0 repeat fixed; 
-  background-size:cover;
-  background-repeat: repeat;
-  width:100%;
-  opacity:1;
-}
-.parent{
-  position:relative;
-}
-.grid{
-  position: absolute;
-  width: 100%;
-  height: auto;
-  display: table-cell;
-}
-.row{
-  display: inline-table;
-  width: 100%;
-  height:600px;
-  margin-top: 0px;
-  opacity:0;
-}
-.column{
-  margin: 0px;
-  padding: 0px;
-  width: 50%;
-  /*height: 350px;*/
-  font-family: 'Raleway', sans-serif;
-  font-weight:200;
-  display: inline-block;
-  text-align: center;
-  position: relative;
-  font-size: 25px;
-}
-.banner{
-  margin: 0px;
-  padding: 0px;
-  width: 100%;
-  font-family: 'Raleway', sans-serif;
-  height: 50px;
-  display: inline-block;
-  text-align: center;
-  position: relative;
-  font-size: 40px;
-}
-#img-pebble1 {
-  position: relative;
-  width: 150px;
-  height: auto;
-  line-height: 350px;
-  vertical-align: middle;
-  margin-top: -20px;
-}
-#img-pebble2 {
-  position: relative;
-  width: 150px;
-  height: auto;
-  line-height: 350px;
-  vertical-align: middle;
-  margin-top: -20px;
-}
-#logo-pebble { 
-  position: relative;
-  width: 250px;
-}
-#amazon_logo{
-  position: relative;
-  width: 240px;
-  height: auto;
-  line-height: 350px;
-  vertical-align: middle;
-  margin-top: 0px;
-}
-#amazon_img1 {
-  position: relative;
-  width: 230px;
-  height: auto;
-  line-height: 350px;
-  vertical-align: middle;
-  margin-top: -20px;
-}
-#synaptics_logo{
-  position:relative;
-  margin-top:200px;
-  width:180px;
-  height:auto;
-}
-#sloan_logo{
-  position:relative;
-  margin-top:200px;
-  width:200px;
-  height:auto;
-}
-#lids_logo{
-  position:relative;
-  margin-top:200px;
-  width:220px;
-  height:auto;
-}
-#wallets_logo{
-  position:relative;
-  margin-top:200px;
-  width:420px;
-  height:auto;
-  border: 2px solid black;
-}
-#roomsort_logo{
-  position:relative;
-  margin-top:200px;
-  width:420px;
-  height:auto;
-  border: 2px solid black;
-}
-#go_logo{
-  position:relative;
-  margin-top:50px;
-  width:420px;
-  height:auto;
-  border: 2px solid black;
-}
-#sudoku_logo{
-  position:relative;
-  margin-top:50px;
-  width:350px;
-  height:auto;
-}
-.text{
-  line-height: 35px;
-}
-.text2{
-  font-size: 30px;
-}
-#mit_logo{
-  width: 250px; 
-  line-height: 350px;
-  position: relative;
-  vertical-align: middle;
-  height: auto;
-}
-#img-medialab {
-  position: relative;
-  width: 330px;
-  height: auto;
-  line-height: 350px;
-  vertical-align: middle;
-  margin-top: -60px;
-}
-#img-csail {
-  position: relative;
-  width: 250px;
-  height: auto;
-  line-height: 350px;
-  vertical-align: middle;
-  margin-top: -40px;
+#MIT-logo rect{
+    opacity: 0;
 }
 
 
-.footer {
-  bottom:0px;
-  position: absolute;
-  height: 150px;
-  width:100%;
+
+.centered-content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
 }
-#footer-image {
-  position: absolute;
-  top: 0;
-  width: 100px; 
-  height: auto;
-  left: 50%;
-  margin-left: -50px;
-  margin-top: -60px;
+
+#about-me {
+    background-color: #A77DC2;
+    z-index: 4;
 }
-#footer-text-container {
-  position: absolute;
-  margin:0px;
-  padding:0px;
-  height: 100px;
-  width: 500px;
-  left:50%;
-  margin-left: -210px;
-  margin-top: 25px;
-  display: table-cell;
-  table-layout: fixed;
+
+#work-experience {
+    background-color: #36465D;
+    z-index: 3;
 }
-.footer-text{
-  margin:0px;
-  padding:0px;
-  margin-left: 0px;
-  margin-right: 0px;
-  width:150px;
-  text-align: center;
-  display: inline-block;
-  line-height: 100px;
+
+#personal-projects {
+    background-color: #F2992E;
+    z-index: 2;
 }
-.footer-text a{
-  color:black;
-  text-decoration: none;
-}
-.footer-text a:hover{
-  padding-bottom: 15px;
-  border-bottom: 1px solid black;
+
+#skills {
+    background-color: #4F693D;
+    z-index: 1;
 }

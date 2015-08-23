@@ -1,102 +1,179 @@
-$(window).load(function() {
-    $(this).scrollTop(0);
-    // progress bar animation
-        fallback = document.getElementById('download-progress'),
-        loaded = 0;
-    var load = function() {
-        loaded += Math.floor((Math.random() * 2) + 3);
-        $(fallback).empty().append("HTML5 progress tag not supported: ");
-        if (loaded == 100) {
-            clearInterval(beginLoad);
-            console.log('Load was performed.');
-        }
-    };
+$(document).ready(function() {
+    sections = $(document.body).children('section');
+    curr_section = 0;
+    is_scrolling = false;
 
-    var beginLoad = setInterval(function() {
-        load();
-    }, 10);
-    // Set extra timeout for loading page
-    $(this).scrollTop(0);
-    window.setTimeout(hideLanding,1750);
-  });
-function hideLanding(){
-    $(this).scrollTop(0);
-    $('#loading').fadeOut(500);
-}
-
-
-// Parallax Scrolling
-$(document).ready(function(){
-	$window = $(window);
-    $('section[data-type="background"]').each(function(){
-        var $bgobj = $(this); // assigning the object
-        
-        $(window).scroll(function() {
-            var yPos = -($window.scrollTop() / $bgobj.data('speed')); 
-             
-            // Put together our final background position
-            var coords = '50% ' + yPos + 'px';
-            // Move the background
-            $bgobj.css({ backgroundPosition: coords });
-
-        }); 
-    });
-    $(window).scroll( function(){
-        $('.parallax').each( function(i){
-            var adjust = 0;
-            if(i == 0)
-                adjust = 1000;
-            else if(i ==1)
-                adjust = 3100;
-            var yPos =  -(($window.scrollTop() - adjust)/ 3); 
-            // Put together our final background position
-            var coords = '0% '+yPos+'px';
-            // Move the background
-            $(this).css({ backgroundPosition: coords });
-        });
-    });
-    // Fading of logo
-    var fadeStart=000 // 100px scroll or less will equiv to 1 opacity
-        ,fadeUntil=300 // 200px scroll or more will equiv to 0 opacity
-        ,fading = $('#article-name')
-        ,fading2 = $('#article-triangles')
-    ;
-
-    $(window).bind('scroll', function(){
-        var offset = $(document).scrollTop()
-            ,opacity=0
-        ;
-        if( offset<=fadeStart ){
-            opacity=1;
-        }else if( offset<=fadeUntil ){
-            opacity=1-offset/fadeUntil;
-        }
-        fading.css('opacity',opacity);
-        fading2.css('opacity',opacity);
-    });
-
-    /* Every time the window is scrolled ... */
-    $(window).scroll( function(){
-        /* Check the location of each desired element */
-        $('.row').each( function(i){
-            var adjust = 0;
-            if(i == 1 || i == 5){
-                adjust = 700;
-            }else if(i > 1)
-                adjust = 200;
-            var bottom_of_object = $(this).position().top + $(this).height() + $(this).height() + adjust;
-            var bottom_of_window = $(window).scrollTop() + $(window).height();
-            /* If the object is completely visible in the window, fade it in */
-            if( bottom_of_window > bottom_of_object){
-                $(this).animate({'opacity':'1'},1700);
-            }
-        }); 
-
-    });
 });
 
+var page = $("body");
 
-// Create HTML5 elements for IE
-  
-document.createElement("article");
-document.createElement("section");
+function removeContent(section) {
+    if (section == 1) {
+        $('#MIT-0').css({
+            opacity: 0,
+            y: 0
+        });
+        $('#MIT-1').css({
+            opacity: 0,
+            y: 330
+        });
+        $('#MIT-2').css({
+            opacity: 0,
+            y: 0
+        });
+        $('#MIT-3').css({
+            opacity: 0
+        });
+        $('#MIT-4').css({
+            opacity: 0,
+            y: 332
+        });
+        $('#MIT-5').css({
+            opacity: 0,
+            x: 300
+        });
+        $('#MIT-6').css({
+            opacity: 0,
+            y: 332
+        });
+    }
+}
+
+function fadeInContent(section) {
+    if (section == 1) {
+        $('#MIT-0').animate({
+            opacity: [1, 'linear'],
+            y: 166,
+        }, {
+            queue: false,
+            duration: 400,
+            done: function(){
+                $('#MIT-4').animate({
+                    opacity: [1, 'linear'],
+                    y: 220,
+                }, {
+                    duration: 400,
+                    done: function() {
+                        $('#MIT-5').animate({
+                            opacity: [1, 'linear'],
+                            x: 229
+                        }, {
+                            duration: 400,
+                            queue: false
+                        });
+
+                        $('#MIT-6').animate({
+                            opacity: [1, 'linear'],
+                            y: 220
+                        }, {
+                            duration: 400,
+                            queue: false,
+                            done: function(){
+                                $('#MIT-3').animate({
+                                    opacity: 1,
+                                }, {
+                                    duration: 600, 
+                                    done: function(){
+                                        is_scrolling = false;
+                                    }
+                                });
+                            }
+                        });
+                    }
+                });
+            }
+        });
+
+        $('#MIT-1, #MIT-2').animate({
+            opacity: [1, 'linear'],
+            y: 166,
+        }, {
+            queue: false,
+            duration: 400
+        });
+
+        return;
+
+    } else if(section == 2) {
+
+    } else if (section == 3) {
+
+    } else if (section == 4) {
+
+    } else if (section == 5) {
+
+    } else if (section == 6) {
+
+    }
+    is_scrolling = false;
+}
+
+function scrollPage(scrollDown) {
+    if (curr_section > sections.length - 2 && scrollDown) {
+        is_scrolling = false;
+        return;
+    } else if (curr_section <= 0 && !scrollDown){
+        is_scrolling = false;
+        return;
+    }
+
+    if (scrollDown)
+        sections.eq(curr_section).animate({
+            top: "-100%"
+        }, "slow", function(){
+            removeContent(curr_section);
+
+            curr_section += 1;
+
+            fadeInContent(curr_section);
+        });
+    else
+        sections.eq(curr_section - 1).animate({
+            top: "0%"
+        }, "slow", function(){
+            removeContent(curr_section);
+
+            curr_section -= 1;
+
+            fadeInContent(curr_section);
+        });
+}
+
+page.on('DOMMouseScroll mousewheel', function(e) {
+    e.preventDefault()
+    if (is_scrolling)
+        return;
+
+    is_scrolling = true;
+
+    var scrollDown = true;
+    if (e.originalEvent.wheelDelta > 0)
+        scrollDown = false;
+
+    scrollPage(scrollDown);
+});
+
+$(document).keydown(function(e) {
+    if (is_scrolling)
+        return;
+
+    is_scrolling = true;
+
+    var scrollDown = true;
+    switch(e.which) {
+        case 38: // up
+        scrollDown = false;
+        break;
+
+        case 40: // down
+        break;
+
+        default: 
+        is_scrolling = false;
+        return; 
+    }
+
+    scrollPage(scrollDown);
+
+    e.preventDefault(); 
+});
