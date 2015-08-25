@@ -139,8 +139,28 @@ function scrollPage(scrollDown) {
         });
 }
 
+var lastY = 0;
+
+page.bind('touchmove', function(e) {
+    e.preventDefault();
+    if (is_scrolling)
+        return;
+
+    is_scrolling = true;
+
+    var currentY = e.originalEvent.touches ? e.originalEvent.touches[0].pageY : e.pageY;
+
+    var scrollDown = true;
+    if (currentY < lastY) 
+        scrollDown = false;
+
+    lastY = currentY;
+
+    scrollPage(scrollDown);
+});
+
 page.on('DOMMouseScroll mousewheel', function(e) {
-    e.preventDefault()
+    e.preventDefault();
     if (is_scrolling)
         return;
 
