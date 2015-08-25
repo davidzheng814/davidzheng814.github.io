@@ -120,7 +120,7 @@ function scrollPage(scrollDown) {
     if (scrollDown)
         sections.eq(curr_section).animate({
             top: "-100%"
-        }, "slow", function(){
+        }, 600, "easeInCubic", function(){
             removeContent(curr_section);
 
             curr_section += 1;
@@ -130,7 +130,7 @@ function scrollPage(scrollDown) {
     else
         sections.eq(curr_section - 1).animate({
             top: "0%"
-        }, "slow", function(){
+        }, 600, "easeInCubic", function(){
             removeContent(curr_section);
 
             curr_section -= 1;
