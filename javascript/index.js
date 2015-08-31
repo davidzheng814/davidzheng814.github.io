@@ -7,6 +7,57 @@ $(document).ready(function() {
 
 var page = $("body");
 
+$(function() {
+  $.fn.swipe = function( callback ) {
+    var touchDown = false,
+      originalPosition = null,
+      $el = $( this );
+
+    function swipeInfo( event ) {
+      var x = event.originalEvent.pageX,
+        y = event.originalEvent.pageY,
+        dx, dy;
+
+      dx = ( x > originalPosition.x ) ? "right" : "left";
+      dy = ( y > originalPosition.y ) ? "down" : "up";
+
+      return {
+        direction: {
+          x: dx,
+          y: dy
+        },
+        offset: {
+          x: x - originalPosition.x,
+          y: originalPosition.y - y
+        }
+      };
+    }
+
+    $el.on( "touchstart mousedown", function ( event ) {
+        event.preventDefault();
+      touchDown = true;
+      originalPosition = {
+        x: event.originalEvent.pageX,
+        y: event.originalEvent.pageY
+      };
+    } );
+
+    $el.on( "touchend mouseup", function () {
+        touchDown = false;
+        originalPosition = null;
+    } );
+
+    $el.on( "touchmove mousemove", function ( event ) {
+        event.preventDefault();
+      if ( !touchDown ) { return;}
+      var info = swipeInfo( event );
+      callback( info.direction, info.offset );
+    } );
+
+    return true;
+  };
+});
+
 function removeContent(section) {
     if (section == 1) {
         $('#MIT-0').css({
@@ -35,6 +86,10 @@ function removeContent(section) {
         $('#MIT-6').css({
             opacity: 0,
             y: 332
+        });
+    } else if (section == 2) {
+        $('.work-box').css({
+            opacity: 0
         });
     }
 }
@@ -95,7 +150,29 @@ function fadeInContent(section) {
         return;
 
     } else if(section == 2) {
-
+        $('#work-box-0').animate({
+            opacity: [1, 'linear']
+        }, {
+            duration: 400,
+            done: function() {
+                $('#work-box-1').animate({
+                    opacity: [1, 'linear']
+                }, {
+                    duration: 400,
+                    done: function() {
+                        $('#work-box-2').animate({
+                            opacity: [1, 'linear']
+                        }, {
+                            duration: 400,
+                            done: function() {
+                                is_scrolling = false;
+                            }
+                        })
+                    }
+                })
+            }
+        });
+        return;
     } else if (section == 3) {
 
     } else if (section == 4) {
@@ -138,26 +215,6 @@ function scrollPage(scrollDown) {
             fadeInContent(curr_section);
         });
 }
-
-var lastY = 0;
-
-page.bind('touchmove', function(e) {
-    e.preventDefault();
-    if (is_scrolling)
-        return;
-
-    is_scrolling = true;
-
-    var currentY = e.originalEvent.touches ? e.originalEvent.touches[0].pageY : e.pageY;
-
-    var scrollDown = true;
-    if (currentY < lastY) 
-        scrollDown = false;
-
-    lastY = currentY;
-
-    scrollPage(scrollDown);
-});
 
 page.on('DOMMouseScroll mousewheel', function(e) {
     e.preventDefault();

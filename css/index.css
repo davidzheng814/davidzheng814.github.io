@@ -31,8 +31,6 @@ section {
     opacity: 0;
 }
 
-
-
 .centered-content {
     position: relative;
     top: 50%;
@@ -49,6 +47,40 @@ section {
 #work-experience {
     background-color: #36465D;
     z-index: 3;
+}
+
+#work-experience .section-wrapper {
+    margin-left:140px;
+    margin-top:80px;
+}
+
+#work-experience .section-title {
+    text-align: left;
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#work-experience .work-box-table {
+    margin: auto;
+}
+
+#work-experience .work-box {
+    vertical-align: top;
+    width: 300px;
+    height: 465px;
+    border: 0px solid;
+    border-radius: 10px;
+    display: table-cell;
+    opacity: 0;
+}
+
+#work-experience .work-box-content {
+    text-align: center;
+    font-weight: 200;
+    font-size: 25px;
+    padding-top: 10px;
+    font-family: 'Raleway', sans-serif;
 }
 
 #personal-projects {
