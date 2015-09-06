@@ -25,11 +25,8 @@ a {
 
 #MIT-logo {
     position:absolute;
-    top: 39%;
-    left: 53%;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
+    top: -50%;
+    left: 1%;
 }
 
 #MIT-logo rect{
@@ -37,11 +34,18 @@ a {
 }
 
 .centered-content {
+    
+    margin: auto;
+    position:relative;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
+}
+
+#about-me .centered-content {
+    width: 46vmin;
+    height: 46vmin;
+    font-size: 2.25vmin;
 }
 
 #about-me {
@@ -55,15 +59,14 @@ a {
 }
 
 .section-wrapper {
-    margin-left:140px;
-    margin-top:80px;
+    margin-left:10.95vw;
 }
 
 .section-title {
     text-align: left;
-    font-size: 50px;
+    font-size: 3.91vw;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 1.56vw;
 }
 
 #work-experience .work-box-table {
@@ -72,10 +75,10 @@ a {
 
 #work-experience .work-box {
     vertical-align: top;
-    width: 300px;
-    height: 465px;
+    width: 23.5vw;
+    height: 36.36vw;
     border: 0px solid;
-    border-radius: 10px;
+    border-radius: 0.78vw;
     display: table-cell;
     opacity: 0;
 }
@@ -83,8 +86,8 @@ a {
 #work-experience .work-box-content {
     text-align: center;
     font-weight: 200;
-    font-size: 25px;
-    padding-top: 10px;
+    font-size: 1.95vw;
+    padding-top: 0.78vw;
     font-family: 'Raleway', sans-serif;
 }
 
@@ -99,10 +102,10 @@ a {
 
 #personal-projects .projects-box {
     vertical-align: top;
-    width: 300px;
-    height: 465px;
+    width: 23.46vw;
+    height: 36.36vw;
     border: 0px solid;
-    border-radius: 10px;
+    border-radius: .78vw;
     display: table-cell;
     opacity: 0;
 }
@@ -110,8 +113,8 @@ a {
 #personal-projects .projects-box-content {
     text-align: center;
     font-weight: 200;
-    font-size: 25px;
-    padding-top: 10px;
+    font-size: 1.95vw;
+    padding-top: .78vw;
     font-family: 'Raleway', sans-serif;
     color: #000;
 }
@@ -127,10 +130,10 @@ a {
 
 #personal-projects-2 .projects-box {
     vertical-align: top;
-    width: 300px;
-    height: 465px;
+    width: 23.46vw;
+    height: 36.36vw;
     border: 0px solid;
-    border-radius: 10px;
+    border-radius: .78vw;
     display: table-cell;
     opacity: 0;
 }
@@ -138,14 +141,14 @@ a {
 #personal-projects-2 .projects-box-content {
     text-align: center;
     font-weight: 200;
-    font-size: 25px;
-    padding-top: 10px;
+    font-size: 1.95vw;
+    padding-top: .78vw;
     font-family: 'Raleway', sans-serif;
     color: #000;
 }
 
 #skills {
-    background-color: #4F693D;
+    background-color: #5D8AA9;
     z-index: 0;
 }
 

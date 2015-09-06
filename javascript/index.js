@@ -62,30 +62,30 @@ function removeContent(section) {
     if (section == 1) {
         $('#MIT-0').css({
             opacity: 0,
-            y: 0
+            y: '0%'
         });
         $('#MIT-1').css({
             opacity: 0,
-            y: 330
+            y: '66%'
         });
         $('#MIT-2').css({
             opacity: 0,
-            y: 0
+            y: '0%'
         });
         $('#MIT-3').css({
             opacity: 0
         });
         $('#MIT-4').css({
             opacity: 0,
-            y: 332
+            y: '67%'
         });
         $('#MIT-5').css({
             opacity: 0,
-            x: 300
+            x: '77%'
         });
         $('#MIT-6').css({
             opacity: 0,
-            y: 332
+            y: '67%'
         });
     } else if (section == 2) {
         $('.work-box').css({
@@ -102,20 +102,20 @@ function fadeInContent(section) {
     if (section == 1) {
         $('#MIT-0').animate({
             opacity: [1, 'linear'],
-            y: 166,
+            y: '33%',
         }, {
             queue: false,
             duration: 400,
             done: function(){
                 $('#MIT-4').animate({
                     opacity: [1, 'linear'],
-                    y: 220,
+                    y: '44%',
                 }, {
                     duration: 400,
                     done: function() {
                         $('#MIT-5').animate({
                             opacity: [1, 'linear'],
-                            x: 229
+                            x: '59%'
                         }, {
                             duration: 400,
                             queue: false
@@ -123,7 +123,7 @@ function fadeInContent(section) {
 
                         $('#MIT-6').animate({
                             opacity: [1, 'linear'],
-                            y: 220
+                            y: '44%'
                         }, {
                             duration: 400,
                             queue: false,
@@ -145,7 +145,7 @@ function fadeInContent(section) {
 
         $('#MIT-1, #MIT-2').animate({
             opacity: [1, 'linear'],
-            y: 166,
+            y: '33%',
         }, {
             queue: false,
             duration: 400
