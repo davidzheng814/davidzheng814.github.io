@@ -91,6 +91,10 @@ function removeContent(section) {
         $('.work-box').css({
             opacity: 0
         });
+    } else if (section == 3 || section == 4) {
+        $('.projects-box').css({
+            opacity: 0
+        });
     }
 }
 
@@ -174,9 +178,53 @@ function fadeInContent(section) {
         });
         return;
     } else if (section == 3) {
-
+        $('#projects-box-2').animate({
+            opacity: [1, 'linear']
+        }, {
+            duration: 400,
+            done: function() {
+                $('#projects-box-1').animate({
+                    opacity: [1, 'linear']
+                }, {
+                    duration: 400,
+                    done: function() {
+                        $('#projects-box-0').animate({
+                            opacity: [1, 'linear']
+                        }, {
+                            duration: 400,
+                            done: function() {
+                                is_scrolling = false;
+                            }
+                        })
+                    }
+                })
+            }
+        });
+        return;
     } else if (section == 4) {
-
+        $('#projects-box-3').animate({
+            opacity: [1, 'linear']
+        }, {
+            duration: 400,
+            done: function() {
+                $('#projects-box-4').animate({
+                    opacity: [1, 'linear']
+                }, {
+                    duration: 400,
+                    done: function() {
+                        $('#projects-box-5').animate({
+                            opacity: [1, 'linear']
+                        }, {
+                            duration: 400,
+                            done: function() {
+                                is_scrolling = false;
+                            }
+                        })
+                    }
+                })
+            }
+        });
+        return;
     } else if (section == 5) {
 
     } else if (section == 6) {
