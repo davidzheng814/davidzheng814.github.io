@@ -1,8 +1,24 @@
 $(document).ready(function() {
     sections = $(document.body).children('section');
     curr_section = 0;
-    is_scrolling = false;
+    is_scrolling = true;
 
+    $('#background-image').delay(500).animate({
+        opacity: [1, 'linear'],
+    }, {
+        duration: 1000,
+        done: function(){
+            $('#landing-content').animate({
+                opacity: [1, 'linear'],
+                top: '50%'
+            }, {
+                duration: 300,
+                done: function() {
+                    is_scrolling = false;
+                }
+            })
+        }
+    });
 });
 
 var page = $("body");
@@ -244,7 +260,8 @@ function scrollPage(scrollDown) {
 
     if (scrollDown)
         sections.eq(curr_section).animate({
-            top: "-100%"
+            top: "-100%",
+
         }, 600, "easeInCubic", function(){
             removeContent(curr_section);
 
