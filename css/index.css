@@ -201,3 +201,7 @@ a {
 #resume:hover {
     background-image: url('../resources/resume-hover.svg');
 }
+
+#preload-01 { background: url('../resources/linkedin-hover.svg') no-repeat -9999px -9999px; }
+#preload-02 { background: url('../resources/github-hover.svg') no-repeat -9999px -9999px; }
+#preload-03 { background: url('../resources/resume-hover.svg') no-repeat -9999px -9999px; }
