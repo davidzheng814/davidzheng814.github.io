@@ -30,7 +30,8 @@ a {
 
 #landing #background-image{
     opacity: 0;
-    background: url('https://36.media.tumblr.com/6fe3600c1195054b828f06a423665919/tumblr_nu61o6Eg4u1qgcap3o1_1280.jpg') no-repeat center center; 
+    /*background: url('https://36.media.tumblr.com/6fe3600c1195054b828f06a423665919/tumblr_nu61o6Eg4u1qgcap3o1_1280.jpg') no-repeat center center; */
+    background: url('../resources/background-image.png') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
