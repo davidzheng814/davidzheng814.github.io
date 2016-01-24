@@ -72,6 +72,8 @@ a {
     position:relative;
     top: 50%;
     transform: translateY(-50%);
+    -webkit-transform:translateY(-50%);
+    -ms-transform:translateY(-50%);
 }
 
 #about-me .centered-content {
@@ -188,9 +190,9 @@ a {
 #skills .table {
     position: relative;
     top: 50%;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
+    transform:translateY(-50%);
+    -webkit-transform:translateY(-50%);
+    -ms-transform:translateY(-50%);
     margin: auto;
 }
 
