@@ -28,28 +28,36 @@ $(document).ready(function() {
         $('#skills .cell').css({display:'block','margin-bottom':'10px','font-size':'2.5vw'});
         $('#skills .title').css({'font-size':'3vw'});
         $('#skills .row').css({'display':'block'});
+        var typewriter = require('typewriter');
+        var tw = typewriter(document.querySelector('#landing-text')).withAccuracy(100).withMinimumSpeed(13).withMaximumSpeed(18).build();
+        tw.wait(800).type(' David Zheng.').wait(600).type(' Thinker and Creator.').wait(600).type(' Lifelong Student');
         return;
     }
     sections = $(document.body).children('section');
     curr_section = 0;
     is_scrolling = true;
 
-    $('#background-image').delay(500).animate({
-        opacity: [1, 'linear'],
-    }, {
-        duration: 1000,
-        done: function(){
-            $('#landing-content').animate({
-                opacity: [1, 'linear'],
-                top: '50%'
-            }, {
-                duration: 300,
-                done: function() {
-                    is_scrolling = false;
-                }
-            })
-        }
-    });
+    // $('#background-image').delay(0).animate({
+    //     opacity: [1, 'linear'],
+    // }, {
+    //     duration: 1000,
+    //     done: function(){
+    //         $('#landing-content').animate({
+    //             opacity: [1, 'linear'],
+    //             top: '50%'
+    //         }, {
+    //             duration: 300,
+    //             done: function() {
+    //                 is_scrolling = false;
+    //             }
+    //         })
+    //     }
+    // });
+    var typewriter = require('typewriter');
+    var tw = typewriter(document.querySelector('#landing-text')).withAccuracy(100).withMinimumSpeed(13).withMaximumSpeed(18).build();
+    tw.wait(800).type(' David Zheng.').wait(600).type(' Thinker and Creator.').wait(600).type(' Lifelong Student');
+    $('#landing-content').css({opacity:1});
+    is_scrolling = false;
 });
 
 var page = $("body");

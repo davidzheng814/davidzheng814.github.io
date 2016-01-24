@@ -20,19 +20,33 @@ a {
 }
 
 #landing {
-    background-color: #36465D;
+    /*background-color: #36465D;*/
+    background-color: #5D8AA9;
     z-index: 5;
 }
 
 #landing-content{
+    font-family: 'Inconsolata';
+    /*letter-spacing:-8px;*/
+    font-style: normal;
+    font-variant: normal;
+    /*font-family:'Allura', serif*/
+    font-size:4vw;
+    width:70%;
+    text-align:left;
     opacity: 0;
-    top: 55%;
+    top: 30%;
+    font-weight:200;
+
+    margin: auto;
+    position:relative;
 }
+
 
 #landing #background-image{
     opacity: 0;
     /*background: url('https://36.media.tumblr.com/6fe3600c1195054b828f06a423665919/tumblr_nu61o6Eg4u1qgcap3o1_1280.jpg') no-repeat center center; */
-    background: url('../resources/background-image.png') no-repeat center center;
+    /*background: url('../resources/background-image.png') no-repeat center center;*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -56,7 +70,6 @@ a {
     
     margin: auto;
     position:relative;
-    position: relative;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -233,3 +246,4 @@ a {
 #preload-01 { background: url('../resources/linkedin-hover.svg') no-repeat -9999px -9999px; }
 #preload-02 { background: url('../resources/github-hover.svg') no-repeat -9999px -9999px; }
 #preload-03 { background: url('../resources/resume-hover.svg') no-repeat -9999px -9999px; }
+
