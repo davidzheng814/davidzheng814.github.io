@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     height: 100%;
+    width:100%;
     background-color: #FFF;
 }
 
@@ -69,6 +70,7 @@ a {
 #about-me {
     background-color: #A77DC2;
     z-index: 4;
+    white-space:nowrap;
 }
 
 #work-experience {
@@ -185,6 +187,14 @@ a {
     font-weight: 200;
     font-size: 18px;
     font-family: 'Raleway', sans-serif;
+}
+
+#skills .row {
+    display: table-row;
+}
+
+#skills .title {
+    font-size:25px;
 }
 
 .icon {
