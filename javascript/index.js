@@ -6,6 +6,7 @@ isMobileOrTablet = function() {
 
 $(document).ready(function() {
     if(isMobileOrTablet()) {
+        $('#landing-text').html('LOOOOOL');
         $('#background-image').css({opacity:1});
         $('section').css({position:'relative'});
         $('#landing-content').css({opacity:1, top:'50%'});
@@ -25,7 +26,7 @@ $(document).ready(function() {
         $('#projects-box-3').css({opacity:1});
         $('#projects-box-4').css({opacity:1});
         $('#projects-box-5').css({opacity:1});
-        $('#skills .cell').css({display:'block','margin-bottom':'10px','font-size':'2.5vw'});
+        $('#skills .cell').css({display:'block','margin-bottom':'10px','font-size':'2.5vw','width':'100%'});
         $('#skills .title').css({'font-size':'3vw'});
         $('#skills .row').css({'display':'block'});
         var typewriter = require('typewriter');
