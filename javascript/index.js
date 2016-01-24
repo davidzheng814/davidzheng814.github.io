@@ -30,7 +30,7 @@ $(document).ready(function() {
         $('#skills .row').css({'display':'block'});
         var typewriter = require('typewriter');
         var tw = typewriter(document.querySelector('#landing-text')).withAccuracy(100).withMinimumSpeed(13).withMaximumSpeed(18).build();
-        tw.wait(800).type(' David Zheng.').wait(600).type(' Thinker and Creator.').wait(600).type(' Lifelong Student');
+        tw.wait(800).type(' David Zheng.').wait(600).type(' Thinker and Creator.').wait(600).type(' Lifelong Student.');
         return;
     }
     $('#MIT-0').css({y:'0%'});
