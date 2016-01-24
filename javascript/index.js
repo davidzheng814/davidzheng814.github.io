@@ -6,7 +6,6 @@ isMobileOrTablet = function() {
 
 $(document).ready(function() {
     if(isMobileOrTablet()) {
-        $('#landing-text').html('LOOOOOL');
         $('#background-image').css({opacity:1});
         $('section').css({position:'relative'});
         $('#landing-content').css({opacity:1, top:'50%'});
@@ -34,6 +33,12 @@ $(document).ready(function() {
         tw.wait(800).type(' David Zheng.').wait(600).type(' Thinker and Creator.').wait(600).type(' Lifelong Student');
         return;
     }
+    $('#MIT-0').css({y:'0%'});
+    $('#MIT-4').css({y:'67%'});
+    $('#MIT-5').css({x:'77%'});
+    $('#MIT-6').css({y:'67%'});
+    $('#MIT-1').css({y:'66%'});
+    $('#MIT-2').css({y:'0%'});
     sections = $(document.body).children('section');
     curr_section = 0;
     is_scrolling = true;
