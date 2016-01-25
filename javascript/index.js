@@ -41,7 +41,6 @@ $(document).ready(function() {
     $('#MIT-2').css({y:'0%'});
     sections = $(document.body).children('section');
     curr_section = 0;
-    is_scrolling = true;
 
     // $('#background-image').delay(0).animate({
     //     opacity: [1, 'linear'],
@@ -61,9 +60,10 @@ $(document).ready(function() {
     // });
     var typewriter = require('typewriter');
     var tw = typewriter(document.querySelector('#landing-text')).withAccuracy(100).withMinimumSpeed(13).withMaximumSpeed(18).build();
-    tw.wait(800).type(' David Zheng.').wait(600).type(' Thinker and Creator.').wait(600).type(' Lifelong Student');
+    tw.wait(800).type(' David Zheng.').wait(600).type(' Thinker and Creator.').wait(600).type(' Lifelong Student.').put('', function(){
+        is_scrolling = false;
+    });
     $('#landing-content').css({opacity:1});
-    is_scrolling = false;
 });
 
 var page = $("body");
