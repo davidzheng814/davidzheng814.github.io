@@ -61,9 +61,10 @@ $(document).ready(function() {
     var typewriter = require('typewriter');
     var tw = typewriter(document.querySelector('#landing-text')).withAccuracy(100).withMinimumSpeed(13).withMaximumSpeed(18).build();
     tw.wait(800).type(' David Zheng.').wait(600).type(' Thinker and Creator.').wait(600).type(' Lifelong Student.').put('', function(){
-        is_scrolling = false;
+        $('#arrow').animate({opacity:1},500);
     });
     $('#landing-content').css({opacity:1});
+    is_scrolling = false;
 });
 
 var page = $("body");
@@ -331,7 +332,7 @@ function scrollPage(scrollDown) {
 page.on('DOMMouseScroll mousewheel', function(e) {
     if(isMobileOrTablet()) return;
     e.preventDefault();
-    if (is_scrolling)
+    if (is_scrolling || Math.abs(e.originalEvent.wheelDelta) < 10)
         return;
 
     is_scrolling = true;
