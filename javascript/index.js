@@ -62,8 +62,13 @@ $(document).ready(function() {
     var tw = typewriter(document.querySelector('#landing-text')).withAccuracy(100).withMinimumSpeed(13).withMaximumSpeed(18).build();
     tw.wait(800).type(' David Zheng.').wait(600).type(' Thinker and Creator.').wait(600).type(' Lifelong Student.').put('', function(){
         $('#arrow').animate({opacity:1},500);
+        $('#arrow').click(function(){
+            is_scrolling = true;
+            scrollPage(true);
+        })
     });
     $('#landing-content').css({opacity:1});
+
     is_scrolling = false;
 });
 

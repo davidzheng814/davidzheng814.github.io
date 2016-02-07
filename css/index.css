@@ -19,6 +19,10 @@ a {
     text-decoration: none;
 }
 
+#arrow {
+    cursor:pointer;
+}
+
 #landing {
     /*background-color: #36465D;*/
     background-color: #5D8AA9;
