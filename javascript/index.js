@@ -202,7 +202,6 @@ function fadeInContent(section) {
                                 }, {
                                     duration: 600, 
                                     done: function(){
-                                        is_scrolling = false;
                                     }
                                 });
                             }
@@ -219,6 +218,10 @@ function fadeInContent(section) {
             queue: false,
             duration: 400
         });
+        
+        setTimeout(function() {
+            is_scrolling = false;
+        },300);
 
         return;
 
@@ -238,13 +241,15 @@ function fadeInContent(section) {
                         }, {
                             duration: 400,
                             done: function() {
-                                is_scrolling = false;
                             }
                         })
                     }
                 })
             }
         });
+        setTimeout(function() {
+            is_scrolling = false;
+        },300);
         return;
     } else if (section == 3) {
         $('#projects-box-2').animate({
@@ -262,13 +267,15 @@ function fadeInContent(section) {
                         }, {
                             duration: 400,
                             done: function() {
-                                is_scrolling = false;
                             }
                         })
                     }
                 })
             }
         });
+        setTimeout(function() {
+            is_scrolling = false;
+        },300);
         return;
     } else if (section == 4) {
         $('#projects-box-3').animate({
@@ -286,13 +293,15 @@ function fadeInContent(section) {
                         }, {
                             duration: 400,
                             done: function() {
-                                is_scrolling = false;
                             }
                         })
                     }
                 })
             }
         });
+        setTimeout(function() {
+            is_scrolling = false;
+        },300);
         return;
     } else if (section == 5) {
 
