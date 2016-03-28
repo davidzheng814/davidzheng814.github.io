@@ -9,6 +9,7 @@ $(document).ready(function() {
         $('#background-image').css({opacity:1});
         $('section').css({position:'relative'});
         $('#landing-content').css({opacity:1, top:'50%'});
+        $('#resources').css({opacity:1});
         $('#MIT-0').css({opacity:1, y:'33%'});
         $('#MIT-4').css({opacity:1, y:'44%'});
         $('#MIT-5').css({opacity:1, x:'59%'});
@@ -29,8 +30,8 @@ $(document).ready(function() {
         $('#skills .title').css({'font-size':'3vw'});
         $('#skills .row').css({'display':'block'});
         var typewriter = require('typewriter');
-        var tw = typewriter(document.querySelector('#landing-text')).withAccuracy(100).withMinimumSpeed(13).withMaximumSpeed(18).build();
-        tw.wait(800).type(' David Zheng.').wait(600).type(' Thinker and Creator.').wait(600).type(' Lifelong Student.');
+        var tw = typewriter(document.querySelector('#landing-text')).withAccuracy(100).withMinimumSpeed(18).withMaximumSpeed(21).build();
+        tw.wait(500).type(' David Zheng.').wait(200).type(' Thinker and Creator.').wait(200).type(' Lifelong Student.');
         return;
     }
     $('#MIT-0').css({y:'0%'});
@@ -59,17 +60,18 @@ $(document).ready(function() {
     //     }
     // });
     var typewriter = require('typewriter');
-    var tw = typewriter(document.querySelector('#landing-text')).withAccuracy(100).withMinimumSpeed(13).withMaximumSpeed(18).build();
-    tw.wait(800).type(' David Zheng.').wait(600).type(' Thinker and Creator.').wait(600).type(' Lifelong Student.').put('', function(){
+    var tw = typewriter(document.querySelector('#landing-text')).withAccuracy(100).withMinimumSpeed(18).withMaximumSpeed(21).build();
+    tw.wait(500).type(' David Zheng.').wait(200).type(' Thinker and Creator.').wait(200).type(' Lifelong Student.').put('', function(){
+        $('#resources').animate({opacity:1}, 500);
         $('#arrow').animate({opacity:1},500);
         $('#arrow').click(function(){
             is_scrolling = true;
             scrollPage(true);
-        })
+        });
+        is_scrolling = false;
     });
     $('#landing-content').css({opacity:1});
 
-    is_scrolling = false;
 });
 
 var page = $("body");
@@ -202,6 +204,7 @@ function fadeInContent(section) {
                                 }, {
                                     duration: 600, 
                                     done: function(){
+                                        is_scrolling = false;
                                     }
                                 });
                             }
@@ -220,7 +223,6 @@ function fadeInContent(section) {
         });
         
         setTimeout(function() {
-            is_scrolling = false;
         },300);
 
         return;
@@ -241,6 +243,7 @@ function fadeInContent(section) {
                         }, {
                             duration: 400,
                             done: function() {
+                                is_scrolling = false;
                             }
                         })
                     }
@@ -248,7 +251,6 @@ function fadeInContent(section) {
             }
         });
         setTimeout(function() {
-            is_scrolling = false;
         },300);
         return;
     } else if (section == 3) {
@@ -267,6 +269,7 @@ function fadeInContent(section) {
                         }, {
                             duration: 400,
                             done: function() {
+                                is_scrolling = false;
                             }
                         })
                     }
@@ -274,7 +277,6 @@ function fadeInContent(section) {
             }
         });
         setTimeout(function() {
-            is_scrolling = false;
         },300);
         return;
     } else if (section == 4) {
@@ -293,6 +295,7 @@ function fadeInContent(section) {
                         }, {
                             duration: 400,
                             done: function() {
+                                is_scrolling = false;
                             }
                         })
                     }
@@ -300,7 +303,6 @@ function fadeInContent(section) {
             }
         });
         setTimeout(function() {
-            is_scrolling = false;
         },300);
         return;
     } else if (section == 5) {
