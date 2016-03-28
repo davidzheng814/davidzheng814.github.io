@@ -9,7 +9,6 @@ $(document).ready(function() {
         $('#background-image').css({opacity:1});
         $('section').css({position:'relative'});
         $('#landing-content').css({opacity:1, top:'50%'});
-        $('#resources').css({opacity:1});
         $('#MIT-0').css({opacity:1, y:'33%'});
         $('#MIT-4').css({opacity:1, y:'44%'});
         $('#MIT-5').css({opacity:1, x:'59%'});
@@ -31,7 +30,9 @@ $(document).ready(function() {
         $('#skills .row').css({'display':'block'});
         var typewriter = require('typewriter');
         var tw = typewriter(document.querySelector('#landing-text')).withAccuracy(100).withMinimumSpeed(18).withMaximumSpeed(21).build();
-        tw.wait(500).type(' David Zheng.').wait(200).type(' Thinker and Creator.').wait(200).type(' Lifelong Student.');
+        tw.wait(500).type(' David Zheng.').wait(200).type(' Thinker and Creator.').wait(200).type(' Lifelong Student.').put('',function(){
+            $('#resources').css({opacity:1});
+        });
         return;
     }
     $('#MIT-0').css({y:'0%'});
@@ -314,6 +315,7 @@ function fadeInContent(section) {
 }
 
 function scrollPage(scrollDown) {
+    if(isMobileOrTablet()) return;
     if (curr_section > sections.length - 2 && scrollDown) {
         is_scrolling = false;
         return;
