@@ -31,7 +31,7 @@ $(document).ready(function() {
         var typewriter = require('typewriter');
         var tw = typewriter(document.querySelector('#landing-text')).withAccuracy(100).withMinimumSpeed(18).withMaximumSpeed(21).build();
         tw.wait(500).type(' David Zheng.').wait(200).type(' Thinker and Creator.').wait(200).type(' Lifelong Student.').put('',function(){
-            $('#resources').css({opacity:1});
+            $('#resources').animate({opacity:1},500);
         });
         return;
     }
@@ -76,58 +76,6 @@ $(document).ready(function() {
 });
 
 var page = $("body");
-
-$(function() {
-    if(isMobileOrTablet()) return;
-  $.fn.swipe = function( callback ) {
-    var touchDown = false,
-      originalPosition = null,
-      $el = $( this );
-
-    function swipeInfo( event ) {
-      var x = event.originalEvent.pageX,
-        y = event.originalEvent.pageY,
-        dx, dy;
-
-      dx = ( x > originalPosition.x ) ? "right" : "left";
-      dy = ( y > originalPosition.y ) ? "down" : "up";
-
-      return {
-        direction: {
-          x: dx,
-          y: dy
-        },
-        offset: {
-          x: x - originalPosition.x,
-          y: originalPosition.y - y
-        }
-      };
-    }
-
-    $el.on( "touchstart mousedown", function ( event ) {
-        event.preventDefault();
-      touchDown = true;
-      originalPosition = {
-        x: event.originalEvent.pageX,
-        y: event.originalEvent.pageY
-      };
-    } );
-
-    $el.on( "touchend mouseup", function () {
-        touchDown = false;
-        originalPosition = null;
-    } );
-
-    $el.on( "touchmove mousemove", function ( event ) {
-        event.preventDefault();
-      if ( !touchDown ) { return;}
-      var info = swipeInfo( event );
-      callback( info.direction, info.offset );
-    } );
-
-    return true;
-  };
-});
 
 function removeContent(section) {
     if (section == 1) {
@@ -315,7 +263,7 @@ function fadeInContent(section) {
 }
 
 function scrollPage(scrollDown) {
-    if(isMobileOrTablet()) return;
+    if(isMobileOrTablet()) return; 
     if (curr_section > sections.length - 2 && scrollDown) {
         is_scrolling = false;
         return;
