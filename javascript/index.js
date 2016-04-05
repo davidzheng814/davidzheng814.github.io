@@ -30,7 +30,7 @@ $(document).ready(function() {
         $('#skills .row').css({'display':'block'});
         var typewriter = require('typewriter');
         var tw = typewriter(document.querySelector('#landing-text')).withAccuracy(100).withMinimumSpeed(18).withMaximumSpeed(21).build();
-        tw.wait(500).type(' David Zheng.').wait(200).type(' Thinker and Creator.').wait(200).type(' Lifelong Student.').put('',function(){
+        tw.wait(800).type(' David Zheng.').wait(200).type(' Thinker and Creator.').wait(200).type(' Lifelong Student.').put('',function(){
             $('#resources').animate({opacity:1},500);
         });
         return;
@@ -62,7 +62,7 @@ $(document).ready(function() {
     // });
     var typewriter = require('typewriter');
     var tw = typewriter(document.querySelector('#landing-text')).withAccuracy(100).withMinimumSpeed(18).withMaximumSpeed(21).build();
-    tw.wait(500).type(' David Zheng.').wait(200).type(' Thinker and Creator.').wait(200).type(' Lifelong Student.').put('', function(){
+    tw.wait(800).type(' David Zheng.').wait(200).type(' Thinker and Creator.').wait(200).type(' Lifelong Student.').put('', function(){
         $('#resources').animate({opacity:1}, 500);
         $('#arrow').animate({opacity:1},500);
         $('#arrow').click(function(){
